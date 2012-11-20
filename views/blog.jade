@@ -1,22 +1,15 @@
 include head
 include blog-nav
+
 div.row
   ul.twelve.columns.post-listings
-    li
-      div.row
-        div.four.columns
-          img(src="/img/DSC_4711.jpg")
-        div.eight.columns
-          header
-            h3.subheader Blog Post Title
-            h5.subheader November 18, 2012
-          p I'm learning some stuff: Foundation and SASS.
-    li
-      div.row
-        div.four.columns
-          img(src="/img/DSC_4911.jpg")
-        div.eight.columns
-          header
-            h3.subheader Blog Post Title
-            h5.subheader November 18, 2012
-          p This is a photo of an umbrella. 
+    each post in posts
+      li
+        div.row
+          div.four.columns
+            img(src="/img/DSC_4711.jpg")
+          div.eight.columns
+            header
+              h3.subheader= post.title
+              h5.subheader= post.date
+                p= post.body
