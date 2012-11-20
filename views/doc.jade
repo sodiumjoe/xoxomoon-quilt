@@ -1,12 +1,10 @@
-extends layout
-
-block content
-  header.jumbotron.masthead
-    div.container
-      h1!= title
-  div.container
-    div.row
-      div.span3
-        include nav-side
-      div.span9.content
-        !{body}
+include head
+div.row
+  div.three.columns.centered
+    h3
+      a(href="http://joe.xoxomoon.com") joe
+      +
+      a(href="http://beverlymoon.com") bev
+      +
+      a(href="http://zeke.xoxomoon.com") zeke
+    h1 xoxomoon

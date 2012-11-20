@@ -4,12 +4,18 @@ var express = require('express'),
     routes = require('./lib/routes');
 
 app.set('views', __dirname + '/views');
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/js', express.static(__dirname + '/public/js'));
+app.use('/img', express.static(__dirname + '/public/img'));
 
-app.get('/img/*', function(req, res){
-    res.redirect(301, conf.assets + req.url);
+app.get('/', function(req, res){
+    res.render('blog.jade');
 });
-app.get('/search', routes.search);
+
+app.get('/blog/post', function(req, res){
+    res.render('post.jade');
+});
+
 app.get('/*', routes.pages);
 app.use(routes.errorHandler);
 
