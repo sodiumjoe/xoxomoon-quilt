@@ -5,11 +5,12 @@ div.row
   ul.twelve.columns.post-listings
     each post in posts
       li
-        div.row
-          div.four.columns
-            img(src="/img/DSC_4711.jpg")
-          div.eight.columns
-            header
-              h3.subheader= post.title
-              h5.subheader= post.date
-                p= post.body
+        a(href="#{post.year}/#{post.month}/#{post.slug}")
+          div.row
+            div.four.columns
+              img(src="/img/DSC_4711.jpg")
+            div.eight.columns
+              header
+                h3.subheader= post.title
+                h5.subheader= post.date.toDateString()
+                  p= post.body

@@ -18,7 +18,42 @@ app.get('/', function(req, res){
             });
         }
     });
+});
 
+app.get('/:year', function(req, res){
+    config.Blog.find({year: req.params.year}).sort('-date').exec(function(err, posts){
+        if(err){
+            console.log(err);
+        }else{
+            res.render('blog.jade', {
+                posts: posts
+            });
+        }
+    });
+});
+
+app.get('/:year/:month', function(req, res){
+    config.Blog.find({year: req.params.year, month: req.params.month}).sort('-date').exec(function(err, posts){
+        if(err){
+            console.log(err);
+        }else{
+            res.render('blog.jade', {
+                posts: posts
+            });
+        }
+    });
+});
+
+app.get('/:year/:month/:slug', function(req, res){
+    config.Blog.findOne({year: req.params.year, month: req.params.month, slug: req.params.slug}, function(err, post){
+        if(err){
+            res.send(err);
+        }else{
+            res.render('post.jade', {
+                post: post
+            });
+        }
+    });
 });
 
 app.get('/blog/post', function(req, res){
