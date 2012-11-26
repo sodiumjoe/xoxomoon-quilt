@@ -2,8 +2,7 @@ include head
 include blog-nav
 div.row
   div.twelve.columns
-    div.card
-      header.title
-        h1.subheader= post.title
-        h3.subheader= post.date.toDateString()
-      !{post.body}
+    header.title
+      h1.subheader= post.title
+      h3.subheader= post.date.toDateString()
+    !{post.body}

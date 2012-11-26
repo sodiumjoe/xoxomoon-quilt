@@ -20,6 +20,10 @@ app.get('/', function(req, res){
     });
 });
 
+app.get('/archive', function(req, res){
+    res.send('archive');
+});
+
 app.get('/:year', function(req, res){
     config.Blog.find({year: req.params.year}).sort('-date').exec(function(err, posts){
         if(err){
@@ -54,10 +58,6 @@ app.get('/:year/:month/:slug', function(req, res){
             });
         }
     });
-});
-
-app.get('/blog/post', function(req, res){
-    res.render('post.jade');
 });
 
 //app.use(routes.errorHandler);

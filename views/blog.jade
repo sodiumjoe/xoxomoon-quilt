@@ -7,10 +7,9 @@ div.row
       li
         a(href="#{post.year}/#{post.month}/#{post.slug}")
           div.row
-            div.four.columns
-              img(src="/img/DSC_4711.jpg")
+            div.four.columns!= post.img
             div.eight.columns
               header
                 h3.subheader= post.title
                 h5.subheader= post.date.toDateString()
-                  p= post.body
+                  p!= post.excerpt

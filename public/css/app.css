@@ -4317,52 +4317,33 @@ body {
 }
 
 /* line 60, ../../foundation-sass/sass/app.scss */
-.card {
-  background-color: white;
-  padding-bottom: 60px;
+.title {
+  padding: 0 0 31px;
+  text-align: center;
 }
 
 /* line 65, ../../foundation-sass/sass/app.scss */
-.card p {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-/* line 70, ../../foundation-sass/sass/app.scss */
-.card img {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-/* line 75, ../../foundation-sass/sass/app.scss */
-.title {
-  padding: 31px 0;
-  text-align: center;
-  border-bottom: 1px solid #edf0f0;
-}
-
-/* line 81, ../../foundation-sass/sass/app.scss */
 .top-bar ul > li a:not(.button) {
   font-weight: lighter;
 }
 
-/* line 85, ../../foundation-sass/sass/app.scss */
+/* line 69, ../../foundation-sass/sass/app.scss */
 .top-bar > ul .name h1 {
   font-weight: lighter;
 }
 
-/* line 89, ../../foundation-sass/sass/app.scss */
+/* line 73, ../../foundation-sass/sass/app.scss */
 .post-listings img {
   display: block;
 }
 
-/* line 93, ../../foundation-sass/sass/app.scss */
+/* line 77, ../../foundation-sass/sass/app.scss */
 .post-listings {
   list-style-type: none;
 }
 
-/* line 98, ../../foundation-sass/sass/app.scss */
+/* line 81, ../../foundation-sass/sass/app.scss */
 .post-listings > li {
   background-color: white;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
