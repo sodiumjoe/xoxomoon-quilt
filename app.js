@@ -1,4 +1,5 @@
 var express = require('express'),
+    async = require('async'),
     config = require('./lib/config.js'),
     app = express(),
     routes = require('./lib/routes');
@@ -20,8 +21,32 @@ app.get('/', function(req, res){
     });
 });
 
+app.get('/about', function(req, res){
+    res.render('about.jade');
+});
+
 app.get('/archive', function(req, res){
-    res.send('archive');
+    var postArray = [];
+    config.Blog.findOne({}, {}, { sort: { 'date' : 1 } }, function(err, post){
+        config.Blog.findOne({}, {}, { sort: { 'date': -1 } }, function (err, post2){
+            var currentYear = post.year;
+            async.whilst(
+                function() { return currentYear <= post2.year },
+                function(callback){
+                    config.Blog.find().where('year').equals(currentYear).sort('date').exec(function(err, posts){
+                        postArray.push({year: currentYear, posts: posts});
+                        currentYear++;
+                        callback(null);
+                    });
+                },
+                function(err){
+                    console.log(postArray);
+                    res.render('archive.jade', {
+                        posts: postArray
+                    });
+            });
+        });
+    });
 });
 
 app.get('/:year', function(req, res){

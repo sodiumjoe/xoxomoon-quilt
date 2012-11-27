@@ -1,0 +1,23 @@
+include head
+include blog-nav
+
+div.row
+  each item in posts
+    div.twelve.columns
+      header
+        h1.subheader
+          !{item.year}
+      div.row
+        ul.twelve.columns.post-listings
+          each post in item.posts
+            li
+              a(href="/#{post.year}/#{post.month}/#{post.slug}")
+                div.row
+                  div.four.columns!= post.img
+                  div.eight.columns
+                    header
+                      h3.subheader= post.title
+                      h5.subheader= post.date.toDateString()
+                        p!= post.excerpt
+
+include footer

@@ -54,12 +54,7 @@ $gray: #EDF0F0;
 
 body {
     background-color: $gray;
-    padding: 90px 0;
-}
-
-.title {
-    padding: 0 0 31px;
-    text-align: center;
+    padding: 90px 0 0;
 }
 
 .top-bar ul > li a:not(.button) {
@@ -81,4 +76,24 @@ body {
 .post-listings > li {
     background-color: white;
     margin-bottom: $columnGutter;
+}
+
+footer {
+    background-color: #222;
+    margin-top: $columnGutter * 3;
+    padding: $columnGutter 0 $columnGutter * 2;
+    color: white;
+}
+
+footer h5 {
+    color: white;
+    font-weight: 400;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer a {
+    color: white;
 }

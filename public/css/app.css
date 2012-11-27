@@ -4313,37 +4313,55 @@ table.hide-for-medium {
 /* line 55, ../../foundation-sass/sass/app.scss */
 body {
   background-color: #edf0f0;
-  padding: 90px 0;
+  padding: 90px 0 0;
 }
 
 /* line 60, ../../foundation-sass/sass/app.scss */
-.title {
-  padding: 0 0 31px;
-  text-align: center;
-}
-
-/* line 65, ../../foundation-sass/sass/app.scss */
 .top-bar ul > li a:not(.button) {
   font-weight: lighter;
 }
 
-/* line 69, ../../foundation-sass/sass/app.scss */
+/* line 64, ../../foundation-sass/sass/app.scss */
 .top-bar > ul .name h1 {
   font-weight: lighter;
 }
 
-/* line 73, ../../foundation-sass/sass/app.scss */
+/* line 68, ../../foundation-sass/sass/app.scss */
 .post-listings img {
   display: block;
 }
 
-/* line 77, ../../foundation-sass/sass/app.scss */
+/* line 72, ../../foundation-sass/sass/app.scss */
 .post-listings {
   list-style-type: none;
 }
 
-/* line 81, ../../foundation-sass/sass/app.scss */
+/* line 76, ../../foundation-sass/sass/app.scss */
 .post-listings > li {
   background-color: white;
   margin-bottom: 30px;
+}
+
+/* line 81, ../../foundation-sass/sass/app.scss */
+footer {
+  background-color: #222;
+  margin-top: 90px;
+  padding: 30px 0 60px;
+  color: white;
+}
+
+/* line 88, ../../foundation-sass/sass/app.scss */
+footer h5 {
+  color: white;
+  font-weight: 400;
+}
+
+/* line 93, ../../foundation-sass/sass/app.scss */
+footer ul {
+  list-style-type: none;
+}
+
+/* line 97, ../../foundation-sass/sass/app.scss */
+footer a {
+  color: white;
 }
