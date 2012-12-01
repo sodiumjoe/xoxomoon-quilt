@@ -9,6 +9,11 @@ app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/js', express.static(__dirname + '/public/js'));
 app.use('/img', express.static(__dirname + '/public/img'));
 
+app.get('/assets/*', function(req, res){
+    res.redirect(301, config.assets + req.url);
+});
+
+
 app.get('/', function(req, res){
     config.Blog.find({}).sort('-date').exec(function(err, posts){
         if(err){

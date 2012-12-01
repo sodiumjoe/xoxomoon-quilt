@@ -2,5 +2,5 @@ github:
   user: joebadmo
   repo: xoxomoon
 
-assets: https://s3.amazonaws.com/joebadmo-patchwork/xoxomoon-assets
+assets: https://s3.amazonaws.com/joebadmo-xoxomoon
 searchify: public_url
