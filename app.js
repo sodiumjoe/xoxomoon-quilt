@@ -5,6 +5,8 @@ var express = require('express'),
     routes = require('./lib/routes');
 
 app.set('views', __dirname + '/views');
+app.use(express.vhost('www.xoxomoon.aws.af.cm', require('./lib/redirect').app));
+app.use(express.vhost('www.xoxomoon.com', require('./lib/redirect').app));
 app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/js', express.static(__dirname + '/public/js'));
 app.use('/img', express.static(__dirname + '/public/img'));
