@@ -69,27 +69,35 @@ app.get('/:year', function(req, res){
 });
 
 app.get('/:year/:month', function(req, res){
-    config.Blog.find({year: req.params.year, month: req.params.month}).sort('-date').exec(function(err, posts){
-        if(err){
-            console.log(err);
-        }else{
-            res.render('blog.jade', {
-                posts: posts
-            });
-        }
-    });
+    if(req.params.month.length < 2){
+        res.redirect(301, '/' + req.params.year + '/' + '0' + req.params.month);
+    }else{
+        config.Blog.find({year: req.params.year, month: req.params.month}).sort('-date').exec(function(err, posts){
+            if(err){
+                console.log(err);
+            }else{
+                res.render('blog.jade', {
+                    posts: posts
+                });
+            }
+        });
+    }
 });
 
 app.get('/:year/:month/:slug', function(req, res){
-    config.Blog.findOne({year: req.params.year, month: req.params.month, slug: req.params.slug}, function(err, post){
-        if(err){
-            res.send(err);
-        }else{
-            res.render('post.jade', {
-                post: post
-            });
-        }
-    });
+    if(req.params.month.length < 2){
+        res.redirect(301, '/' + req.params.year + '/' + '0' + req.params.month + '/' + req.params.slug);
+    }else{
+        config.Blog.findOne({year: req.params.year, month: req.params.month, slug: req.params.slug}, function(err, post){
+            if(err){
+                res.send(err);
+            }else{
+                res.render('post.jade', {
+                    post: post
+                });
+            }
+        });
+    }
 });
 
 //app.use(routes.errorHandler);

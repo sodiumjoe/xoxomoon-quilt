@@ -6,7 +6,10 @@ body
     ul.twelve.columns.post-listings
       each post in posts
         li
-          a(href="/#{post.year}/#{post.month}/#{post.slug}")
+          month = post.month;
+          if (post.month < 10)
+            month = '0' + post.month;
+          a(href="/#{post.year}/#{month}/#{post.slug}")
             div.row
               div.four.columns!= post.img
               div.eight.columns
