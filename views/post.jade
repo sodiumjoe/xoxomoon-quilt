@@ -7,5 +7,6 @@ body
         h1.subheader= post.title
         h3.subheader= post.date.toDateString()
       !{post.body}
+      include disqus
   
   include footer

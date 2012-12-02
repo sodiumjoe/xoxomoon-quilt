@@ -4365,3 +4365,11 @@ footer ul {
 footer a {
   color: white;
 }
+
+/* DISQUS */
+
+div#disqus_thread {
+    border-top: 2px solid rgba(0, 49, 79, 0.08);
+    padding-top: 20px;
+    margin-top: 45px;
+}
