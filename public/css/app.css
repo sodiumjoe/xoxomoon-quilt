@@ -4366,6 +4366,13 @@ footer a {
   color: white;
 }
 
+
+@media (max-width: 767px) {
+    .subheader {
+        margin-left: 14px;
+    }
+}
+
 /* DISQUS */
 
 div#disqus_thread {
