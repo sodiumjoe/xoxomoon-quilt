@@ -60,9 +60,13 @@ app.get('/:year', function(req, res){
     config.Blog.find({year: req.params.year}).sort('-date').exec(function(err, posts){
         if(err){
             console.log(err);
-        }else{
+        }else if(posts.length > 0){
             res.render('blog.jade', {
                 posts: posts
+            });
+        }else{
+            res.render('404.jade', {
+                message: "Sorry, there aren't any posts for " + req.params.year
             });
         }
     });
@@ -71,13 +75,22 @@ app.get('/:year', function(req, res){
 app.get('/:year/:month', function(req, res){
     if(req.params.month.length < 2){
         res.redirect(301, '/' + req.params.year + '/' + '0' + req.params.month);
+    }else if(req.params.month < 1 || req.params.month > 12){
+        res.render('404.jade', {
+            message: "That's not really a month."
+        });
     }else{
         config.Blog.find({year: req.params.year, month: req.params.month}).sort('-date').exec(function(err, posts){
             if(err){
                 console.log(err);
-            }else{
+            }else if(posts.length > 0){
                 res.render('blog.jade', {
                     posts: posts
+                });
+            }else{
+                var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                res.render('404.jade', {
+                    message: "Sorry, there aren't any posts for " + month[req.params.month-1] + ', ' + req.params.year
                 });
             }
         });
@@ -87,6 +100,10 @@ app.get('/:year/:month', function(req, res){
 app.get('/:year/:month/:slug', function(req, res){
     if(req.params.month.length < 2){
         res.redirect(301, '/' + req.params.year + '/' + '0' + req.params.month + '/' + req.params.slug);
+    }else if(req.params.month < 1 || req.params.month > 12){
+        res.render('404.jade', {
+            message: "That's not really a month."
+        });
     }else{
         config.Blog.findOne({year: req.params.year, month: req.params.month, slug: req.params.slug}, function(err, post){
             if(err){
@@ -100,6 +117,6 @@ app.get('/:year/:month/:slug', function(req, res){
     }
 });
 
-//app.use(routes.errorHandler);
+app.use(routes.errorHandler);
 
 app.listen(process.env.VCAP_APP_PORT || 3000);
