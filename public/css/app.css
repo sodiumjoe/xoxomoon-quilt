@@ -4380,3 +4380,13 @@ div#disqus_thread {
     padding-top: 20px;
     margin-top: 45px;
 }
+
+/* LOGO */
+
+#xoxomoon-logo {
+    background: URL(/assets/xoxomoon.png) 0px 0px no-repeat;
+    text-indent: -9999px;
+    width: 191px;
+    margin: 16px 15px 0;
+    height: 31px;
+}
