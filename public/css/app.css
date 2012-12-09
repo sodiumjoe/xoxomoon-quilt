@@ -4390,3 +4390,7 @@ div#disqus_thread {
     margin: 16px 15px 0;
     height: 31px;
 }
+
+.contain-to-grid > nav.top-bar {
+    max-width: 768px;
+}
