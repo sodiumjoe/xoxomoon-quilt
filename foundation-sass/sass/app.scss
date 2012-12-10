@@ -97,3 +97,36 @@ footer ul {
 footer a {
     color: white;
 }
+
+@media (max-width: 767px) {
+    .subheader, .excerpt {
+        margin-left: $columnGutter/2;
+    }
+}
+
+/* DISQUS */
+
+div#disqus_thread {
+    border-top: 2px solid rgba(0, 49, 79, 0.08);
+    padding-top: 20px;
+    margin-top: 45px;
+}
+
+/* LOGO */
+
+#xoxomoon-logo {
+    background: url(/assets/xoxomoon.png) 0px 16px no-repeat;
+    text-indent: -9999px;
+    width: 191px;
+    padding-top: 16px;
+    margin: 0 15px;
+    height: 45px;
+}
+
+.contain-to-grid > nav.top-bar {
+    max-width: 768px;
+}
+
+p.excerpt {
+    padding-right: $columnGutter;
+}

@@ -4030,7 +4030,7 @@ table.hide-for-medium {
   }
   /* line 366, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.2/scss/foundation/components/modules/_mqueries.scss */
   .top-bar ul > li.name {
-    background: #222;
+    background: black;
     height: 45px;
   }
   /* line 367, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-3.2.2/scss/foundation/components/modules/_mqueries.scss */
@@ -4366,32 +4366,37 @@ footer a {
   color: white;
 }
 
-
 @media (max-width: 767px) {
-    .subheader {
-        margin-left: 14px;
-    }
+  /* line 102, ../../foundation-sass/sass/app.scss */
+  .subheader, .excerpt {
+    margin-left: 15px;
+  }
 }
-
 /* DISQUS */
-
+/* line 109, ../../foundation-sass/sass/app.scss */
 div#disqus_thread {
-    border-top: 2px solid rgba(0, 49, 79, 0.08);
-    padding-top: 20px;
-    margin-top: 45px;
+  border-top: 2px solid rgba(0, 49, 79, 0.08);
+  padding-top: 20px;
+  margin-top: 45px;
 }
 
 /* LOGO */
-
+/* line 117, ../../foundation-sass/sass/app.scss */
 #xoxomoon-logo {
-    background: URL(/assets/xoxomoon.png) 0px 16px no-repeat;
-    text-indent: -9999px;
-    width: 191px;
-    padding-top: 16px;
-    margin: 0 15px;
-    height: 45px;
+  background: url(/assets/xoxomoon.png) 0px 16px no-repeat;
+  text-indent: -9999px;
+  width: 191px;
+  padding-top: 16px;
+  margin: 0 15px;
+  height: 45px;
 }
 
+/* line 126, ../../foundation-sass/sass/app.scss */
 .contain-to-grid > nav.top-bar {
-    max-width: 768px;
+  max-width: 768px;
+}
+
+/* line 130, ../../foundation-sass/sass/app.scss */
+p.excerpt {
+  padding-right: 30px;
 }
