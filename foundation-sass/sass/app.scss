@@ -130,3 +130,8 @@ div#disqus_thread {
 p.excerpt {
     padding-right: $columnGutter;
 }
+
+.top-bar ul > li.name {
+    background: #222;
+    height: 45px;
+  }

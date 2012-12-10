@@ -4400,3 +4400,9 @@ div#disqus_thread {
 p.excerpt {
   padding-right: 30px;
 }
+
+/* line 134, ../../foundation-sass/sass/app.scss */
+.top-bar ul > li.name {
+  background: #222;
+  height: 45px;
+}
