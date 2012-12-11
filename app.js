@@ -22,6 +22,7 @@ app.get('/', function(req, res){
             console.log(err);
         }else{
             res.render('blog.jade', {
+                post: null,
                 posts: posts
             });
         }
@@ -109,8 +110,22 @@ app.get('/:year/:month/:slug', function(req, res){
             if(err){
                 res.send(err);
             }else{
-                res.render('post.jade', {
-                    post: post
+                config.Blog.find({date: {$lt: post.date}}).sort('-date').limit(1).exec(function(err, prev){
+                    if(err){
+                        res.send(err);
+                    }else{
+                        config.Blog.find({date: {$gt: post.date}}).sort('date').limit(1).exec(function(err, next){
+                            if(err){
+                                res.send(err);
+                            }else{
+                                res.render('post.jade', {
+                                    post: post,
+                                    prev: prev[0],
+                                    next: next[0]
+                                });
+                            }
+                        });
+                    }
                 });
             }
         });

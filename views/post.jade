@@ -4,9 +4,16 @@ body
   div.row
     div.twelve.columns
       header.title
-        h1.subheader= post.title
-        h3.subheader= post.date.toDateString()
+        h2.subheader= post.title
+        h4.subheader= post.date.toDateString()
       !{post.body}
+      div.row.post-nav
+        div.twelve.columns
+          ul
+            if(prev)
+              li.left: a(href="/#{prev.year}/#{prev.month}/#{prev.slug}") &laquo; Previous: "!{prev.title}"
+            if(next)
+              li.right: a(href="/#{next.year}/#{next.month}/#{next.slug}") Next: "!{next.title}" &raquo;
       include disqus
   
   include footer
