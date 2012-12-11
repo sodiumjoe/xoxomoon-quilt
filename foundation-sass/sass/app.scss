@@ -107,7 +107,6 @@ footer a {
 /* DISQUS */
 
 div#disqus_thread {
-    border-top: 2px solid rgba(0, 49, 79, 0.08);
     padding-top: 20px;
     margin-top: 45px;
 }
@@ -129,9 +128,42 @@ div#disqus_thread {
 
 p.excerpt {
     padding-right: $columnGutter;
+    color: #6F6F6F;
 }
 
 .top-bar ul > li.name {
     background: #222;
     height: 45px;
-  }
+}
+
+/* blog post listing page */
+
+header { 
+    .post-title {
+        margin-bottom: 5px;
+    }
+
+    .post-date {
+        margin-top: 5px;
+    }
+}
+
+/* Next and Previous Post Nav */
+
+.post-nav > div > ul {
+    margin-top: $columnGutter;
+    padding-top: $columnGutter/2;
+    border-top: 2px solid rgba(0, 49, 79, 0.08);
+}
+
+.post-nav > div > ul > li {
+    list-style-type: none;
+}
+
+.post-nav li.left {
+    margin-left: -10px;
+}
+
+.post-nav li.right {
+    margin-right: -10px;
+}

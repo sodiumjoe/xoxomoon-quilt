@@ -4375,13 +4375,12 @@ footer a {
 /* DISQUS */
 /* line 109, ../../foundation-sass/sass/app.scss */
 div#disqus_thread {
-  border-top: 2px solid rgba(0, 49, 79, 0.08);
   padding-top: 20px;
   margin-top: 45px;
 }
 
 /* LOGO */
-/* line 117, ../../foundation-sass/sass/app.scss */
+/* line 116, ../../foundation-sass/sass/app.scss */
 #xoxomoon-logo {
   background: url(/assets/xoxomoon.png) 0px 16px no-repeat;
   text-indent: -9999px;
@@ -4391,18 +4390,52 @@ div#disqus_thread {
   height: 45px;
 }
 
-/* line 126, ../../foundation-sass/sass/app.scss */
+/* line 125, ../../foundation-sass/sass/app.scss */
 .contain-to-grid > nav.top-bar {
   max-width: 768px;
 }
 
-/* line 130, ../../foundation-sass/sass/app.scss */
+/* line 129, ../../foundation-sass/sass/app.scss */
 p.excerpt {
   padding-right: 30px;
+  color: #6F6F6F;
 }
 
 /* line 134, ../../foundation-sass/sass/app.scss */
 .top-bar ul > li.name {
   background: #222;
   height: 45px;
+}
+
+/* blog post listing page */
+/* line 142, ../../foundation-sass/sass/app.scss */
+header .post-title {
+  margin-bottom: 5px;
+}
+/* line 146, ../../foundation-sass/sass/app.scss */
+header .post-date {
+  margin-top: 5px;
+}
+
+/* Next and Previous Post Nav */
+/* line 153, ../../foundation-sass/sass/app.scss */
+.post-nav > div > ul {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 2px solid rgba(0, 49, 79, 0.08);
+}
+
+/* line 159, ../../foundation-sass/sass/app.scss */
+.post-nav > div > ul > li {
+  list-style-type: none;
+}
+
+/* line 163, ../../foundation-sass/sass/app.scss */
+.post-nav li.left {
+  margin-left: -10px;
+}
+
+/* line 167, ../../foundation-sass/sass/app.scss */
+.post-nav li.right {
+  margin-right: -10px;
 }

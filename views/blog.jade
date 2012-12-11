@@ -14,8 +14,8 @@ body
               div.four.columns!= post.img
               div.eight.columns
                 header
-                  h3.subheader= post.title
-                  h5.subheader= post.date.toDateString()
+                  h4.subheader.post-title= post.title
+                  h6.subheader.post-date= post.date.toDateString()
                   p.excerpt!= post.excerpt
   
   include footer
