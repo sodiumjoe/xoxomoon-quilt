@@ -148,6 +148,17 @@ header {
     }
 }
 
+header.title {
+    h2.subheader {
+        margin-bottom: 5px;
+    }
+    h4.subheader {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: $columnGutter * 1.5;
+    }
+}
+
 /* Next and Previous Post Nav */
 
 .post-nav > div > ul {

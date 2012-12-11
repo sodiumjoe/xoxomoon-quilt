@@ -4417,25 +4417,36 @@ header .post-date {
   margin-top: 5px;
 }
 
+/* line 152, ../../foundation-sass/sass/app.scss */
+header.title h2.subheader {
+  margin-bottom: 5px;
+}
+/* line 155, ../../foundation-sass/sass/app.scss */
+header.title h4.subheader {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 45px;
+}
+
 /* Next and Previous Post Nav */
-/* line 153, ../../foundation-sass/sass/app.scss */
+/* line 164, ../../foundation-sass/sass/app.scss */
 .post-nav > div > ul {
   margin-top: 30px;
   padding-top: 15px;
   border-top: 2px solid rgba(0, 49, 79, 0.08);
 }
 
-/* line 159, ../../foundation-sass/sass/app.scss */
+/* line 170, ../../foundation-sass/sass/app.scss */
 .post-nav > div > ul > li {
   list-style-type: none;
 }
 
-/* line 163, ../../foundation-sass/sass/app.scss */
+/* line 174, ../../foundation-sass/sass/app.scss */
 .post-nav li.left {
   margin-left: -10px;
 }
 
-/* line 167, ../../foundation-sass/sass/app.scss */
+/* line 178, ../../foundation-sass/sass/app.scss */
 .post-nav li.right {
   margin-right: -10px;
 }
