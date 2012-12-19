@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/about', function(req, res){
-    res.render('about.jade');
+    res.render('about.jade', { post: { title: "About" }});
 });
 
 app.get('/archive', function(req, res){
