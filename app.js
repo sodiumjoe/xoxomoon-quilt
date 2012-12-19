@@ -50,6 +50,7 @@ app.get('/archive', function(req, res){
                 function(err){
                     console.log(postArray);
                     res.render('archive.jade', {
+                        post: { title: "Archive" },
                         posts: postArray
                     });
             });
