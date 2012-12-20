@@ -8,9 +8,12 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
     language en-US
     lastBuildDate= new Date(posts[0].date).toUTCString()
     each post in posts
+      month = post.month;
+      if (post.month < 10)
+        month = '0' + post.month;
       item
         title= post.title
-        link http://xoxomoon.com/#{post.slug}
+        link http://xoxomoon.com/#{post.year}/#{month}/#{post.slug}
         pubDate= new Date(post.date).toUTCString()
-        guid http://xoxomoon.com/#{post.slug}
+        guid http://xoxomoon.com/#{post.year}/#{month}/#{post.slug}
         description!= post.excerpt
