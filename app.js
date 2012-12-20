@@ -33,6 +33,23 @@ app.get('/about', function(req, res){
     res.render('about.jade', { post: { title: "About" }});
 });
 
+app.get('/feed', function(req, res){
+    config.Blog.find({}).sort('-date').limit(20).exec(function(err, posts){
+        if(err){
+            console.log(err);
+        }else{
+            res.render('feed.jade', {
+                posts: posts
+            });
+        }
+    });
+});
+
+/*
+app.get('/feed', function(req, res){
+});
+*/
+
 app.get('/archive', function(req, res){
     var postArray = [];
     config.Blog.findOne({}, {}, { sort: { 'date' : 1 } }, function(err, post){
@@ -48,7 +65,6 @@ app.get('/archive', function(req, res){
                     });
                 },
                 function(err){
-                    console.log(postArray);
                     res.render('archive.jade', {
                         post: { title: "Archive" },
                         posts: postArray
