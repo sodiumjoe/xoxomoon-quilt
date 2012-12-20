@@ -16,4 +16,5 @@ rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
         link http://xoxomoon.com/#{post.year}/#{month}/#{post.slug}
         pubDate= new Date(post.date).toUTCString()
         guid http://xoxomoon.com/#{post.year}/#{month}/#{post.slug}
-        description!= post.excerpt
+        description
+          html!= post.body
